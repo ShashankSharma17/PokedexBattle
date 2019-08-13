@@ -19,7 +19,7 @@ class Pokegame extends Component {
     let hand2 = [...this.props.pokemon]
     while (hand1.length < hand2.length) {
       let randIdx = Math.floor(Math.random() * hand2.length)
-      let randPokemon = hand2.slice(randIdx, 1)[0]
+      let randPokemon = hand2.splice(randIdx, 1)[0]
       hand1.push(randPokemon)
     }
     let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0)
@@ -32,5 +32,4 @@ class Pokegame extends Component {
     )
   }
 }
-
 export default Pokegame
